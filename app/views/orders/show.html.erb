@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<img src="<%= @order.photo(:square) %> style="display:block;">
+<%= @order['id'] %>
+<%= @order['name'] %>
+<%= @order['phone'] %>
+<%= @order['email'] %>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

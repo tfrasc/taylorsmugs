@@ -1,0 +1,88 @@
+<%= render :partial => 'partials/header' %>
+<%= render :partial => 'partials/slider' %>
+
+<div class="img-overlay-container" id="1">
+  <div class="img-overlay" id="home" style="background-image:url(/images/bonfire.jpg)">
+    <div class="img-overlay-header-container">
+      <h1 class="img-overlay-header">
+        Taylor's Mugs is a local Reno/Tahoe artist who creates custom mugs
+      </h1>
+    </div>
+    <div class="img-overlay-button order-mug">
+      <div class="img-overlay-button-content">
+        Order a Mug
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="img-overlay-container" id="2" hidden>
+  <div class="img-overlay" style="background-image:url(/images/book.jpg)">
+    <div class="img-overlay-header-container">
+      <h1 class="img-overlay-header">
+        Just a few examples of Taylor's work...
+      </h1>
+    </div>
+    <div class="img-overlay-button order-mug">
+      <div class="img-overlay-button-content">
+        Order a Mug
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="img-overlay-container" id="3" hidden>
+  <div class="img-overlay" style="background-image:url(/images/spoon.jpg)">
+      <div class="order-box">
+        <h1 class="img-overlay-header" s>
+          Order your own
+        </h1>
+        <%= form_for Order.new do |f| %>
+          <%= f.text_field :name, required: true, class: 'form-control order-box-input centered', placeholder: 'Name'  %>
+          <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input centered', placeholder: 'Phone', min: 7  %>
+          <%= f.email_field :email, required: true, class: 'form-control order-box-input centered', placeholder: 'Email' %>
+          <div class="dropzone round drop-field new" data-image="/images/bark.jpg" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true" style="height:200px;width: 200px;">
+            <%= f.file_field :photo %>
+          </div>
+          <%= f.text_area :message, class: 'form-control centered', style:'resize:none;width:60%;' %>
+          <%= f.submit :submit, class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
+        <% end %>
+      </div>
+    <div class="img-overlay-button" id="get-inspired">
+      <div class="img-overlay-button-content">
+        Get Inspired
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="img-overlay-container" id="4" hidden>
+  <div class="img-overlay" id="contact" style="background-image:url(/images/vw.jpg)">
+  <div class="sections-container">
+    <div class="col-sm-2 contact-container">
+      <a href="#">
+        <img src="/images/coffee.png">
+      </a>
+      <h3>Order your mug here</h3>
+    </div>
+    <div class="col-sm-2 contact-container">
+      <a href="#">
+        <img src="/images/camera.png">
+      </a>
+      <h3>Check out Taylor's Instagram</h3>
+    </div>
+    <div class="col-sm-2 contact-container">
+      <a href="#">
+        <img src="/images/twitter.svg">
+      </a>
+      <h3>Check out Taylor's Twitter</h3>
+    </div>
+    <div class="col-sm-2 contact-container">
+      <a href="#">
+        <img src="/images/thumbsup.png">
+      </a>
+      <h3>Read some of Taylor's reviews</h3>
+    </div>
+  </div>
+  </div>
+</div>
