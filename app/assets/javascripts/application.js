@@ -21,7 +21,7 @@ $(document).ready(function() {
     $('.contact-container').removeClass('col-sm-3 col-sm-offset-2');
     $('.contact-container').addClass('col-xs-3');
   }
-  
+
   var screenId = 1;
 
   $('.left').click(function() {
@@ -69,34 +69,34 @@ $(document).ready(function() {
     updateScreens();
   });
 
-  // **** Dropzone setup *****
-  $('.dropzone').html5imageupload({
-    onAfterInitImage: function() {
-      addClickHandlerToDelete()
-      $(".dropzone.round img, .dropzone.round canvas").css("border-radius", "50%");
-  	},
-    onAfterProcessImage: function() {
-      addClickHandlerToDelete();
-      addClickHandlerToEdit();
-      $(".dropzone.round img, .dropzone.round canvas").css("border-radius", "50%");
-      $(".dropzone").removeClass("new");
-      $('.dropzone').css('overflow', 'hidden');
-  	}
-  });
-
-  // Need to do this because onAfterRemoveImage doesn't work as advertised
-  function addClickHandlerToDelete() {
-    console.log("HIT1");
-    $('.btn-del').click(function(){
-      $(".dropzone").addClass("new");
-      $('.dropzone').css('overflow', 'visible');
-    });
-  }
-  function addClickHandlerToEdit() {
-    console.log("HIT2");
-    $('.btn-edit').click(function(){
-      $(".dropzone.round canvas, .dropzone.round img, .cropWrapper.round img").css("border-radius", "0");
-      $('.dropzone').css('overflow', 'visible');
-    });
-  }
+  // // **** Dropzone setup *****
+  // $('.dropzone').html5imageupload({
+  //   onAfterInitImage: function() {
+  //     addClickHandlerToDelete()
+  //     $(".dropzone.round img, .dropzone.round canvas").css("border-radius", "50%");
+  // 	},
+  //   onAfterProcessImage: function() {
+  //     addClickHandlerToDelete();
+  //     addClickHandlerToEdit();
+  //     $(".dropzone.round img, .dropzone.round canvas").css("border-radius", "50%");
+  //     $(".dropzone").removeClass("new");
+  //     $('.dropzone').css('overflow', 'hidden');
+  // 	}
+  // });
+  //
+  // // Need to do this because onAfterRemoveImage doesn't work as advertised
+  // function addClickHandlerToDelete() {
+  //   console.log("HIT1");
+  //   $('.btn-del').click(function(){
+  //     $(".dropzone").addClass("new");
+  //     $('.dropzone').css('overflow', 'visible');
+  //   });
+  // }
+  // function addClickHandlerToEdit() {
+  //   console.log("HIT2");
+  //   $('.btn-edit').click(function(){
+  //     $(".dropzone.round canvas, .dropzone.round img, .cropWrapper.round img").css("border-radius", "0");
+  //     $('.dropzone').css('overflow', 'visible');
+  //   });
+  // }
 });

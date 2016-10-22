@@ -46,6 +46,7 @@
   @media(max-width: 599px) {
     width: 40px;
     height: 40px;
+    font-size: 25px;
   }
 }
 
@@ -53,4 +54,8 @@
   position: relative;
   top: 45%;
   transform: translateY(-50%);
+
+  @media(max-width: 599px) {
+    top: 43%;
+  }
 }
