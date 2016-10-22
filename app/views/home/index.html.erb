@@ -40,10 +40,10 @@
           <%= f.text_field :name, required: true, class: 'form-control order-box-input centered', placeholder: 'Name'  %>
           <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input centered', placeholder: 'Phone', min: 7  %>
           <%= f.email_field :email, required: true, class: 'form-control order-box-input centered', placeholder: 'Email' %>
-          <div class="dropzone round drop-field new" data-image="/images/bark.jpg" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true" style="height:200px;width: 200px;">
+          <div class="dropzone round drop-field new" data-image="/images/bark.jpg" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true">
             <%= f.file_field :photo %>
           </div>
-          <%= f.text_area :message, class: 'form-control centered', style:'resize:none;width:60%;' %>
+          <%= f.text_area :message, class: 'form-control centered', style:'resize:none;width:60%;margin-bottom:5px;', placeholder: 'Extra details' %>
           <%= f.submit :submit, class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
         <% end %>
       </div>
