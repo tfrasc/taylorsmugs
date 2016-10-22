@@ -82,7 +82,7 @@
   }
 
   @media(max-width: 599px) {
-    margin-top: 60%;
+    margin-top: 62%;
   }
 }
 
@@ -197,7 +197,9 @@
   border: solid 1px #ddd;
 
   @media(max-width: 599px) {
-    width: 37% !important;
+    width: 40% !important;
+    margin-left: 4px;
+    margin-right: 4px;
 
     img {
       width: 70px;
