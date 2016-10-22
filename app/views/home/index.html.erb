@@ -40,8 +40,8 @@
           <%= f.text_field :name, required: true, class: 'form-control order-box-input centered', placeholder: 'Name'  %>
           <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input centered', placeholder: 'Phone Number' %>
           <%= f.email_field :email, required: true, class: 'form-control order-box-input centered', placeholder: 'Email' %>
-          <%= f.text_area :message, class: 'form-control order-box-input centered', style:"resize:none;", placeholder: 'Extra details' %>
-          <div class="dropzone round drop-field new" data-image="/images/bark.jpg" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true">
+          <%= f.text_area :details, class: 'form-control order-box-input centered', style:"resize:none;", placeholder: 'Details (optional)' %>
+          <div class="dropzone round drop-field new" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true">
             <%= f.file_field :photo %>
           </div>
           <%= f.submit "Go to Payment", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>

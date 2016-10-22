@@ -4,10 +4,11 @@ class AddOrders < ActiveRecord::Migration[5.0]
       t.string "name"
       t.string "phone"
       t.string "email"
-      t.string "message"
+      t.string "details"
       t.string "product", default: "mug"
       t.integer "price", default: 20
       t.boolean "paid", default: false
+      t.boolean "delivered", default: false
       t.string "method"
 
       t.has_attached_file :photo

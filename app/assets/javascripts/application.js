@@ -73,24 +73,20 @@ $(document).ready(function() {
     $(this).addClass('selected');
     $('#pay-online').removeClass('selected');
     $('#method').val("in-person");
+    $('#finalize-order').text("Submit Order");
   });
 
   $('#pay-online').click(function() {
     $(this).addClass('selected');
     $('#pay-in-person').removeClass('selected');
     $('#method').val("online");
+    $('#finalize-order').text("Pay Now");
   });
 
   $('#finalize-order').click(function() {
     id = $('#id').val();
 
     if($('#method').val() == "in-person") {
-      // $.ajax('/orders/' + id, {order: {method: "in-person"} },
-      //   function() {
-      //     window.location.href = '/';
-      //   }
-      // );
-
       $.ajax({
       type: "PATCH",
       url: '/orders/' + id,
@@ -100,6 +96,9 @@ $(document).ready(function() {
         window.location.href = '/';
         }
       });
+    }
+    else {
+      $('#payment-modal').modal('show');
     }
   });
   // // **** Dropzone setup *****

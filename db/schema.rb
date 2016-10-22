@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20161021014341) do
     t.string   "name"
     t.string   "phone"
     t.string   "email"
-    t.string   "message"
+    t.string   "details"
     t.string   "product",            default: "mug"
     t.integer  "price",              default: 20
     t.boolean  "paid",               default: false
+    t.boolean  "delivered",          default: false
     t.string   "method"
     t.string   "photo_file_name"
     t.string   "photo_content_type"

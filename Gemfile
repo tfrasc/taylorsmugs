@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# wepay API to make online payments
+gem 'wepay', '~> 0.3.0', github: 'wepay/Ruby-SDK'
+
 gem 'paperclip'
 
 gem 'pg'
