@@ -17,6 +17,11 @@
 //= require_tree .
 
 $(document).ready(function() {
+  if ($(window).width() < 599) {
+    $('.contact-container').removeClass('col-sm-3 col-sm-offset-2');
+    $('.contact-container').addClass('col-xs-3');
+  }
+  
   var screenId = 1;
 
   $('.left').click(function() {

@@ -116,6 +116,10 @@
   h3 {
     font-size: 18px;
   }
+
+  @media(max-width: 599px) {
+    top: 25%;
+  }
 }
 
 .order-box {
@@ -193,11 +197,11 @@
   border: solid 1px #ddd;
 
   @media(max-width: 599px) {
-    width: 45%;
+    width: 37% !important;
 
     img {
-      width: 75px;
-      height: 75px;
+      width: 70px;
+      height: 70px;
     }
   }
 }
