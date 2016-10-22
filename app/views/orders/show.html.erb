@@ -1,14 +1,20 @@
 <div class="img-overlay-container" id="1">
   <div class="img-overlay" id="home" style="background-image:url(/images/beans.jpg)">
-    <p id="notice"><%= notice %></p>
 
-    <img src="<%= @order.photo(:square) %> style="display:block;">
-    <%= @order['id'] %>
-    <%= @order['name'] %>
-    <%= @order['phone'] %>
-    <%= @order['email'] %>
+    <div class="checkout-container">
+      <h1 class="checkout-header">Here's your <%= @order['product'] %>!</h1>
+      <img src="<%= @order.photo(:square) %>" class="checkout-image">
+      <div class="checkout-price">
+        <%= number_to_currency(@order['price']) %>
+      <div>
+      <button class="checkout-button selected" id="pay-in-person">Pay in person</button>
+      <button class="checkout-button" id="pay-online">Pay online</button>
+      <input type="text" id="id" value="<%= @order['id'] %>" hidden>
+      <input type="text" id="method" value="in-person" hidden>
+      <br>
 
-    <%= link_to 'Edit', edit_order_path(@order) %> |
-    <%= link_to 'Back', orders_path %>
+      <a class="button btn" id="finalize-order">Finalize Order</a>
+      <%= link_to 'Cancel your order', @order, class: 'button btn', id: 'cancel-order', method: :delete, data: { confirm: 'Are you sure you want to cancel your order?' } %>
+    </div>
   </div>
 </div>

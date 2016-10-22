@@ -2,6 +2,9 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :process_photo, only: [:create, :update]
 
+  skip_before_action :verify_authenticity_token
+
+
   def process_photo
     if params && params[:photo].present?
       json_data = JSON.parse(params[:photo][:_values])
@@ -68,7 +71,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to '/', notice: 'Order was successfully cancelled.' }
       format.json { head :no_content }
     end
   end

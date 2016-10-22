@@ -69,6 +69,39 @@ $(document).ready(function() {
     updateScreens();
   });
 
+  $('#pay-in-person').click(function() {
+    $(this).addClass('selected');
+    $('#pay-online').removeClass('selected');
+    $('#method').val("in-person");
+  });
+
+  $('#pay-online').click(function() {
+    $(this).addClass('selected');
+    $('#pay-in-person').removeClass('selected');
+    $('#method').val("online");
+  });
+
+  $('#finalize-order').click(function() {
+    id = $('#id').val();
+
+    if($('#method').val() == "in-person") {
+      // $.ajax('/orders/' + id, {order: {method: "in-person"} },
+      //   function() {
+      //     window.location.href = '/';
+      //   }
+      // );
+
+      $.ajax({
+      type: "PATCH",
+      url: '/orders/' + id,
+      data: {order: {method: "in-person"} },
+      dataType: "text",
+      success: function(resultData){
+        window.location.href = '/';
+        }
+      });
+    }
+  });
   // // **** Dropzone setup *****
   // $('.dropzone').html5imageupload({
   //   onAfterInitImage: function() {

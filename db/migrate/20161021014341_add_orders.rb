@@ -5,6 +5,8 @@ class AddOrders < ActiveRecord::Migration[5.0]
       t.string "phone"
       t.string "email"
       t.string "message"
+      t.string "product", default: "mug"
+      t.integer "price", default: 20
       t.boolean "paid", default: false
       t.string "method"
 
