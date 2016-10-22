@@ -33,7 +33,7 @@
 <div class="img-overlay-container" id="3" hidden>
   <div class="img-overlay" style="background-image:url(/images/spoon.jpg)">
       <div class="order-box">
-        <h1 class="img-overlay-header">
+        <h1 class="img-overlay-header" id="order-box-header">
           Order your own
         </h1>
         <%= form_for Order.new do |f| %>
@@ -58,27 +58,27 @@
 <div class="img-overlay-container" id="4" hidden>
   <div class="img-overlay" id="contact" style="background-image:url(/images/vw.jpg)">
   <div class="sections-container">
-    <div class="col-sm-2 contact-container">
-      <a href="#" target="_blank">
-        <img src="/images/coffee.png">
-      </a>
-      <h3>Order your mug here</h3>
-    </div>
-    <div class="col-sm-2 contact-container">
+    <div class="col-sm-3 col-sm-offset-2 contact-container">
       <a href="https://www.instagram.com/taylorsmugs/" target="_blank">
-        <img src="/images/camera.png">
+        <img src="/images/social-instagram.png">
       </a>
       <h3>Check out Taylor's Instagram</h3>
     </div>
-    <div class="col-sm-2 contact-container">
+    <div class="col-sm-3 contact-container">
       <a href="https://twitter.com/taylorsmugs/" target="_blank">
-        <img src="/images/twitter.svg">
+        <img src="/images/social-twitter.png">
       </a>
       <h3>Check out Taylor's Twitter</h3>
     </div>
-    <div class="col-sm-2 contact-container">
+    <div class="col-sm-3 col-sm-offset-2 contact-container order-mug">
+      <a>
+        <img src="/images/mug.png">
+      </a>
+      <h3>Order your mug here</h3>
+    </div>
+    <div class="col-sm-3 contact-container">
       <a href="#" target="_blank">
-        <img src="/images/thumbsup.png">
+        <img src="/images/reviews.png">
       </a>
       <h3>Read some of Taylor's reviews</h3>
     </div>

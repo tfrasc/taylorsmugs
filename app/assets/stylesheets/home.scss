@@ -46,16 +46,24 @@
   border-radius: 4px;
   height: 40%;
   width: 80%;
-  //background-color: rgba(255, 255, 255, 0.3);
+
+  @media(max-width: 599px) {
+    top: 35%;
+  }
 }
 
 .img-overlay-header {
   font-size: 45px;
   font-family: 'Reenie Beanie';
   margin-top: 0;
-  padding-top: 8%;
+  padding-top: 5%;
   padding-left: 5%;
   padding-right: 5%;
+
+  @media(max-width: 599px) {
+    font-size: 42px;
+    padding-top: 0px;
+  }
 }
 
 .img-overlay-button {
@@ -127,13 +135,17 @@
   background-color: rgba(255, 255, 255, 0.9);
 
   @media(max-width: 599px) {
-    width: 68%;
+    width: 72%;
   }
 }
 
 .order-box-input {
   width: 45% !important;
   margin-bottom: 5px;
+}
+
+#order-box-header {
+  margin-top: 0px;
 }
 
 #get-inspired {
@@ -147,7 +159,24 @@
 .contact-container {
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 25px;
   border: solid 1px #ddd;
+
+
+
+  @media(max-width: 599px) {
+    width: 45%;
+
+    img {
+      width: 75px;
+      height: 75px;
+
+      &:hover {
+        text-decoration: none;
+        background-color: transparent;
+      }
+    }
+  }
 }
