@@ -82,7 +82,7 @@
   }
 
   @media(max-width: 599px) {
-    margin-top: 62%;
+    margin-top: 60%;
   }
 }
 
@@ -119,6 +119,10 @@
 
   @media(max-width: 599px) {
     top: 25%;
+  }
+
+  @media(max-width: 374px) {
+    top: 20%;
   }
 }
 
