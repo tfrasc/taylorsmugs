@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="img-overlay-container" id="1">
+  <div class="img-overlay" id="home" style="background-image:url(/images/beans.jpg)">
+    <p id="notice"><%= notice %></p>
 
-<img src="<%= @order.photo(:square) %> style="display:block;">
-<%= @order['id'] %>
-<%= @order['name'] %>
-<%= @order['phone'] %>
-<%= @order['email'] %>
+    <img src="<%= @order.photo(:square) %> style="display:block;">
+    <%= @order['id'] %>
+    <%= @order['name'] %>
+    <%= @order['phone'] %>
+    <%= @order['email'] %>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+    <%= link_to 'Edit', edit_order_path(@order) %> |
+    <%= link_to 'Back', orders_path %>
+  </div>
+</div>

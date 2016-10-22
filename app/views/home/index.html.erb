@@ -38,13 +38,13 @@
         </h1>
         <%= form_for Order.new do |f| %>
           <%= f.text_field :name, required: true, class: 'form-control order-box-input centered', placeholder: 'Name'  %>
-          <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input centered', placeholder: 'Phone', min: 7  %>
+          <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input centered', placeholder: 'Phone Number' %>
           <%= f.email_field :email, required: true, class: 'form-control order-box-input centered', placeholder: 'Email' %>
+          <%= f.text_area :message, class: 'form-control order-box-input centered', style:"resize:none;", placeholder: 'Extra details' %>
           <div class="dropzone round drop-field new" data-image="/images/bark.jpg" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true">
             <%= f.file_field :photo %>
           </div>
-          <%= f.text_area :message, class: 'form-control centered', style:'resize:none;width:60%;margin-bottom:5px;', placeholder: 'Extra details' %>
-          <%= f.submit :submit, class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
+          <%= f.submit "Go to Payment", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
         <% end %>
       </div>
     <div class="img-overlay-button" id="get-inspired">

@@ -136,8 +136,13 @@
 }
 
 .order-box-input {
-  width: 45% !important;
+  display: inline-block !important;
+  width: 48% !important;
   margin-bottom: 5px;
+}
+
+#order_message {
+  height: 34px;
 }
 
 .dropzone {
