@@ -19,9 +19,14 @@
       <% else %>
         <h1 class="checkout-header" style="padding-top:5px !important;">Thanks for your order!</h1>
         <img src="<%= @order.photo(:square) %>" class="checkout-image">
-        <%= form_for @order do |f| %>
-          <%= f.text_area :review, class: 'form-control order-box-input centered', placeholder: "Tell Taylor how much you love you #{@order['product']}"  %>
-          <%= f.submit "Leave a review", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
+        <% if @order['review'].nil? %>
+          <%= form_for @order do |f| %>
+            <%= f.text_area :review, class: 'form-control order-box-input centered', placeholder: "Tell Taylor how much you love your #{@order['product']} :)"  %>
+            <%= f.submit "Leave a review", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
+            <% end %>
+        <% else %>
+          <h2>Enjoy your <%= @order['product'] %> :)</h2>
+          <a class="btn button" href="/">Order anotha one</a>
         <% end %>
       <% end %>
     </div>
