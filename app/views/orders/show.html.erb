@@ -4,19 +4,26 @@
   <div class="img-overlay" id="home" style="background-image:url(/images/beans.jpg)">
 
     <div class="checkout-container">
-      <h1 class="checkout-header">Here's your <%= @order['product'] %>!</h1>
-      <img src="<%= @order.photo(:square) %>" class="checkout-image">
-      <div class="checkout-price">
-        <%= number_to_currency(@order['price']) %>
-      <div>
-      <button class="checkout-button selected" id="pay-in-person">Pay in person</button>
-      <button class="checkout-button" id="pay-online">Pay online</button>
-      <input type="text" id="id" value="<%= @order['id'] %>" hidden>
-      <input type="text" id="method" value="in-person" hidden>
-      <br>
+      <% if @order['paid'] == false && @order['method'].nil? %>
+        <h1 class="checkout-header">Here's your <%= @order['product'] %>!</h1>
+        <img src="<%= @order.photo(:square) %>" class="checkout-image">
+        <div class="checkout-price"><%= number_to_currency(@order['price']) %></div>
+        <button class="checkout-button selected" id="pay-in-person">Pay in person</button>
+        <button class="checkout-button" id="pay-online">Pay online</button>
+        <input type="text" id="id" value="<%= @order['id'] %>" hidden>
+        <input type="text" id="method" value="in-person" hidden>
+        <br>
 
-      <a class="button btn" id="finalize-order">Submit Order</a>
-      <%= link_to 'Cancel your order', @order, class: 'button btn', id: 'cancel-order', method: :delete, data: { confirm: 'Are you sure you want to cancel your order?' } %>
+        <a class="button btn" id="finalize-order">Submit Order</a>
+        <%= link_to 'Cancel your order', @order, class: 'button btn', id: 'cancel-order', method: :delete, data: { confirm: 'Are you sure you want to cancel your order?' } %>
+      <% else %>
+        <h1 class="checkout-header" style="padding-top:5px !important;">Thanks for your order!</h1>
+        <img src="<%= @order.photo(:square) %>" class="checkout-image">
+        <%= form_for @order do |f| %>
+          <%= f.text_area :review, class: 'form-control order-box-input centered', placeholder: "Tell Taylor how much you love you #{@order['product']}"  %>
+          <%= f.submit "Leave a review", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

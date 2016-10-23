@@ -10,6 +10,7 @@ class AddOrders < ActiveRecord::Migration[5.0]
       t.boolean "paid", default: false
       t.boolean "delivered", default: false
       t.string "method"
+      t.string "review"
 
       t.has_attached_file :photo
 
