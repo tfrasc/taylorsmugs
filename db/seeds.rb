@@ -5,4 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Order.create([{name: 'Allahu Akbar'}, {photo: 'mug.jpg'}, {review: 'Luh dit shit cuhhhhh'}])
+Order.create([{name: "Emily"}, {photo: "/images/moon.jpg"}, {product: "mug"}, {review: "It's perfect. My momma's gonna love it! Thanks so much Tay!"}, {featured: true}])
+Order.create([{name: "Brooke"}, {photo: "/images/fox.jpg"}, {product: "mug"}, {review: "This is gold."}, {featured: true}])
+Order.create([{name: "Rachel"}, {photo: "/images/porcupine.jpg"}, {product: "mug"}, {review: "So adorable I love it !!"}, {featured: true}])
+Order.create([{name: "Misti"}, {photo: "/images/parrot.jpg"}, {product: "mug"}, {review: "Wow...Thank you! Those are great!!"}, {featured: true}])
+Order.create([{name: "Eddy"}, {photo: "/images/kobe.jpg"}, {product: "mug"}, {review: "So dope ! You're so talented"}, {featured: true}])
+Order.create([{name: "Gabby"}, {photo: "/images/tress.jpg"}, {product: "wine glass"}, {review: "Those are awesome!"}, {featured: true}])
