@@ -23,7 +23,7 @@
           <%= form_for @order do |f| %>
             <%= f.text_area :review, class: 'form-control order-box-input centered', placeholder: "Tell Taylor how much you love your #{@order['product']} :)"  %>
             <%= f.submit "Leave a review", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
-            <% end %>
+          <% end %>
         <% else %>
           <h2>Enjoy your <%= @order['product'] %> :)</h2>
           <a class="btn button" href="/">Order anotha one</a>

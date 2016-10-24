@@ -103,12 +103,12 @@ $(document).ready(function() {
 
     if($('#method').val() == "in-person") {
       $.ajax({
-      type: "PATCH",
-      url: '/orders/' + id,
-      data: {order: {method: "in-person"} },
-      dataType: "text",
-      success: function(resultData){
-        window.location.href = '/';
+        type: "PATCH",
+        url: '/orders/' + id,
+        data: {order: {method: "in-person"} },
+        dataType: "text",
+        success: function(resultData){
+          window.location.href = '/orders/' + id;
         }
       });
     }
