@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Order.create([{name: 'Allahu Akbar'}, {photo: 'mug.jpg'}, {review: 'Luh dit shit cuhhhhh'}])

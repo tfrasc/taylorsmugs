@@ -20,18 +20,23 @@ ActiveRecord::Schema.define(version: 20161021014341) do
     t.string   "phone"
     t.string   "email"
     t.string   "details"
-    t.string   "product",            default: "mug"
-    t.integer  "price",              default: 20
-    t.boolean  "paid",               default: false
-    t.boolean  "delivered",          default: false
+    t.string   "product",                     default: "mug"
+    t.integer  "price",                       default: 20
+    t.boolean  "paid",                        default: false
+    t.boolean  "delivered",                   default: false
     t.string   "method"
     t.string   "review"
+    t.boolean  "featured",                    default: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.string   "customer_photo_file_name"
+    t.string   "customer_photo_content_type"
+    t.integer  "customer_photo_file_size"
+    t.datetime "customer_photo_updated_at"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
 end

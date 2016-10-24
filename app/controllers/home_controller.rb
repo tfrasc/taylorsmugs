@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.where(featured: true)
   end
 end

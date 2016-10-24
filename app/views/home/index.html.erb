@@ -19,8 +19,25 @@
   <div class="img-overlay" style="background-image:url(/images/book.jpg)">
     <div class="img-overlay-header-container">
       <h1 class="img-overlay-header">
-        Just a few examples of Taylor's work...
+        Some of Taylor's work...
       </h1>
+      <% @orders.each_with_index do |order, i| %>
+        <div class="featured-mug" <%= i == 0 ? '' : 'hidden' %> id="featured-mug-<%= i %>">
+          <img src="<%= order.photo(:square) %>" class="featured-mug-image">
+          <div class="featured-mug-customer">
+<% if !order.customer_photo.nil? %>
+<% end %>
+          <div>
+            <%= order.product.capitalize %> for <%= order.name %>
+          </div>
+          <div class="featured-mug-review">
+            <span style="font-size:30px;">“</span>
+              <%= order.review %>
+            <span style="font-size:30px;">”</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
     <div class="img-overlay-button order-mug">
       <div class="img-overlay-button-content">

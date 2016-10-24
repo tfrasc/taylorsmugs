@@ -11,8 +11,10 @@ class AddOrders < ActiveRecord::Migration[5.0]
       t.boolean "delivered", default: false
       t.string "method"
       t.string "review"
+      t.boolean "featured", default: false
 
       t.has_attached_file :photo
+      t.has_attached_file :customer_photo
 
       t.timestamps
     end

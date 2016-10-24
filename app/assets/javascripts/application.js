@@ -23,6 +23,8 @@ $(document).ready(function() {
   }
 
   var screenId = 1;
+  var featuredMugId = 0;
+  var numFeaturedMugs = $('.featured-mug').length;
 
   $('.left').click(function() {
     screenId--;
@@ -54,6 +56,19 @@ $(document).ready(function() {
     $('.img-overlay-container').hide();
     $("#" + screenId).show();
   }
+
+  function featuredMugFlipper() {
+    setInterval(function(){
+      $('.featured-mug').hide();
+      $('#featured-mug-' + featuredMugId).show();
+      featuredMugId++;
+      if(featuredMugId == numFeaturedMugs) {
+        featuredMugId = 0;
+      }
+    }, 3000);
+  }
+
+  featuredMugFlipper();
 
   $('.order-mug').click(function() {
     screenId = 3;

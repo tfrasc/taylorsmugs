@@ -93,6 +93,28 @@
   transform: translateY(-50%);
 }
 
+.featured-mug {
+  float: none;
+  margin: auto;
+  width: 65%;
+  height: 70%;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.featured-mug-image {
+  float: left;
+  height: 80%;
+  transform: translateY(10%);
+  margin-left: 20px;
+  border-radius: 4px;
+}
+
+.featured-mug-review {
+  margin-top: 3%;
+  font-size: 18px;
+}
+
 .sections-container {
   font-family: 'Pacifico';
   position: relative;
