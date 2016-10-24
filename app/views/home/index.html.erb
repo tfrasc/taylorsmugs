@@ -27,13 +27,13 @@
           <div class="featured-mug-customer">
 <% if !order.customer_photo.nil? %>
 <% end %>
-          <div>
+          <div class="featured-mug-name">
             <%= order.product.capitalize %> for <%= order.name %>
           </div>
           <div class="featured-mug-review">
-            <span style="font-size:30px;">“</span>
+            <span class="fancy-quotes">“</span>
               <%= order.review %>
-            <span style="font-size:30px;">”</span>
+            <span class="fancy-quotes">”</span>
           </div>
         </div>
       </div>

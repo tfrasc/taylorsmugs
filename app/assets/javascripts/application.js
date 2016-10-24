@@ -59,13 +59,16 @@ $(document).ready(function() {
 
   function featuredMugFlipper() {
     setInterval(function(){
-      $('.featured-mug').hide();
-      $('#featured-mug-' + featuredMugId).show();
+      $('.featured-mug').fadeOut(500, function() {
+        // $('.featured-mug').hide();
+        $('#featured-mug-' + featuredMugId).show();
+        // $('#featured-mug-' + featuredMugId).fadeIn(300);
+      });
       featuredMugId++;
       if(featuredMugId == numFeaturedMugs) {
         featuredMugId = 0;
       }
-    }, 3000);
+    }, 2500);
   }
 
   featuredMugFlipper();
