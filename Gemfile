@@ -34,6 +34,9 @@ gem 'paperclip'
 
 gem 'pg'
 
+gem 'aws-sdk', '~> 2'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
