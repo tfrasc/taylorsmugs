@@ -259,6 +259,28 @@
   }
 }
 
+.order-mug {
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+
+    a {
+      background-color: transparent;
+    }
+  }
+}
+
+.read-reviews {
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+
+    a {
+      background-color: transparent;
+    }
+  }
+}
+
 .contact-container {
   margin-left: 10px;
   margin-right: 10px;

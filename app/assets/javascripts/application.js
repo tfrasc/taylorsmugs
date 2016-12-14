@@ -80,6 +80,20 @@ $(document).ready(function() {
     updateScreens();
   });
 
+  $('.read-reviews').click(function() {
+    screenId = 2;
+    $('.left').show();
+    $('.right').show();
+    updateScreens();
+  });
+
+  $('#get-inspired').click(function() {
+    screenId = 2;
+    $('.left').show();
+    $('.right').show();
+    updateScreens();
+  });
+
   $('#get-inspired').click(function() {
     screenId = 2;
     $('.left').show();
