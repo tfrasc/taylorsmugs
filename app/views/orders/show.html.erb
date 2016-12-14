@@ -22,11 +22,12 @@
         <% if @order['review'].nil? %>
           <%= form_for @order do |f| %>
             <%= f.text_area :review, class: 'form-control order-box-input centered', placeholder: "Tell Taylor how much you love your #{@order['product']} :)"  %>
-            <%= f.submit "Leave a review", class: 'form-control centered', style: 'margin-top:0;width:45%;' %>
+            <%= f.submit "Leave a review", class: 'btn button review-btn checkout-btn selected', style: 'margin-top:0;width:45%;' %>
+            <!-- <a class="btn button checkout-btn selected review-btn home-btn">Back to Home Page</a> -->
           <% end %>
         <% else %>
           <h2>Enjoy your <%= @order['product'] %> :)</h2>
-          <a class="btn button" href="/">Order anotha one</a>
+          <a class="btn button checkout-btn selected home-btn">Back to Home Page</a>
         <% end %>
       <% end %>
     </div>

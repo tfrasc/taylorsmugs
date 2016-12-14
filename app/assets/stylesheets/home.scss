@@ -281,6 +281,12 @@
   }
 }
 
+.review-btn {
+  &:hover {
+    background-color: rgba(30, 30, 30, 0.5);
+  }
+}
+
 .contact-container {
   margin-left: 10px;
   margin-right: 10px;

@@ -101,6 +101,10 @@ $(document).ready(function() {
     updateScreens();
   });
 
+  $('.home-btn').click(function() {
+    window.location.href = '/';
+  });
+
   $('#pay-in-person').click(function() {
     $(this).addClass('selected');
     $('#pay-online').removeClass('selected');
