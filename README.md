@@ -1,24 +1,19 @@
-# README
+# Taylor's Mugs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple, mobile-friendly Rails website for local Reno/Tahoe artist that sells mugs.
 
-Things you may want to cover:
+TODOs:
 
-* Ruby version
+* Implement online payment (Stripe)
 
-* System dependencies
+* Fix production image upload by using AWS S3 bucket
 
-* Configuration
+* Fix HTML5 image dropper with mug/wine/shot glass template
 
-* Database creation
+* Implement emails to notify admin and user of order
 
-* Database initialization
+* Create admin view to track payments and deliveries
 
-* How to run the test suite
+* Add option for wine and shot glasses
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Add fun/fancy ui (order counter, etc.)
