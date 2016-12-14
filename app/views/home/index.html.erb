@@ -54,10 +54,10 @@
           Order your own
         </h1>
         <%= form_for Order.new do |f| %>
-          <%= f.text_field :name, required: true, class: 'form-control order-box-input centered', placeholder: 'Name'  %>
-          <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input centered', placeholder: 'Phone Number' %>
-          <%= f.email_field :email, required: true, class: 'form-control order-box-input centered', placeholder: 'Email' %>
-          <%= f.text_area :details, class: 'form-control order-box-input centered', style:"resize:none;height:34px;", placeholder: 'Details (optional)' %>
+          <%= f.text_field :name, required: true, class: 'form-control order-box-input', placeholder: 'Name'  %>
+          <%= f.telephone_field :phone, required: true, class: 'form-control order-box-input', placeholder: 'Phone Number' %>
+          <%= f.email_field :email, required: true, class: 'form-control order-box-input', placeholder: 'Email' %>
+          <%= f.text_area :details, class: 'form-control order-box-input', style:"resize:none;height:34px;", placeholder: 'Details (optional)' %>
           <div class="dropzone round drop-field new" data-ajax="false" data-originalsize="false" data-width="400" data-height="400" data-resize="true">
             <%= f.file_field :photo %>
           </div>
