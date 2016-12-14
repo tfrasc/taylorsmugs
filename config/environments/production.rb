@@ -3,13 +3,13 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
   :storage => :s3,
-  :s3_region => "us-west-1",
+  :s3_region => ENV['S3_REGION'],
   :s3_protocol => 'https',
   :s3_credentials => {
     :bucket => 'taylorsmugs',
     :access_key_id => ENV['S3_KEY'],
     :secret_access_key => ENV['S3_SECRET'],
-    :region => "us-west-1"
+    :region => ENV['S3_REGION']
   }
 }
 
