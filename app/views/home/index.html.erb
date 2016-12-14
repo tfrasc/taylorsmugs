@@ -25,8 +25,8 @@
         <div class="featured-mug" <%= i == 0 ? '' : 'hidden' %> id="featured-mug-<%= i %>">
           <img src="<%= order.photo(:square) %>" class="featured-mug-image">
           <div class="featured-mug-customer">
-<% if !order.customer_photo.nil? %>
-<% end %>
+            <% if !order.customer_photo.nil? %>
+            <% end %>
           <div class="featured-mug-name">
             <%= order.product.capitalize %> for <%= order.name %>
           </div>
