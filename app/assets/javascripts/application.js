@@ -109,17 +109,21 @@ $(document).ready(function() {
     $(this).addClass('selected');
     $('#pay-online').removeClass('selected');
     $('#method').val("in-person");
-    $('#finalize-order').text("Submit Order");
+    $('#finalize-order-in-person').show();
+    $('#finalize-order-online').hide();
+    $('.pay-online-price').hide();
   });
 
   $('#pay-online').click(function() {
     $(this).addClass('selected');
     $('#pay-in-person').removeClass('selected');
     $('#method').val("online");
-    $('#finalize-order').text("Pay Now");
+    $('#finalize-order-in-person').hide();
+    $('#finalize-order-online').show();
+    $('.pay-online-price').show();
   });
 
-  $('#finalize-order').click(function() {
+  $('#finalize-order-in-person').click(function() {
     id = $('#id').val();
 
     if($('#method').val() == "in-person") {

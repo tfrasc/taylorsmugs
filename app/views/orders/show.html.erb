@@ -1,20 +1,20 @@
-<%= render :partial => 'payment_modal' %>
+<script src="https://checkout.stripe.com/checkout.js"></script>
 
 <div class="img-overlay-container" id="1">
   <div class="img-overlay" id="home" style="background-image:url(/images/beans.jpg)">
-
     <div class="checkout-container">
       <% if @order['paid'] == false && @order['method'].nil? %>
         <h1 class="checkout-header">Here's your <%= @order['product'] %>!</h1>
         <img src="<%= @order.photo(:square) %>" class="checkout-image">
-        <div class="checkout-price"><%= number_to_currency(@order['price']) %></div>
+        <div class="checkout-price"><%= number_to_currency(@order['price']) %> <span class="pay-online-price" hidden>(+.88 Stripe fee)</span></div>
         <button class="checkout-button selected" id="pay-in-person">Pay in person</button>
         <button class="checkout-button" id="pay-online">Pay online</button>
         <input type="text" id="id" value="<%= @order['id'] %>" hidden>
         <input type="text" id="method" value="in-person" hidden>
         <br>
 
-        <a class="button btn" id="finalize-order">Submit Order</a>
+        <a class="button btn finalize-order" id="finalize-order-in-person">Submit Order</a>
+        <a class="button btn finalize-order" style="display:none" id="finalize-order-online">Pay Now</a>
         <%= link_to 'Cancel your order', @order, class: 'button btn', id: 'cancel-order', method: :delete, data: { confirm: 'Are you sure you want to cancel your order?' } %>
       <% else %>
         <h1 class="checkout-header" style="padding-top:5px !important;">Thanks for your order!</h1>
@@ -33,3 +33,56 @@
     </div>
   </div>
 </div>
+
+<script>
+var id = $('#id').val();
+
+var handler = StripeCheckout.configure({
+  key: 'ENV['STRIPE_KEY']',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    $.ajax({
+      type: "POST",
+      url: '/orders/pay_online',
+      data: {stripeToken: token.id },
+      dataType: "text",
+      success: function(resultData){
+        $.ajax({
+          type: "PATCH",
+          url: '/orders/' + id,
+          data: { order:
+            { method: "online",
+              paid: true
+            }
+          },
+          dataType: "text",
+          success: function(resultData){
+            window.location.href = '/orders/' + id;
+          }
+        });
+      },
+      error: function(error){
+        console.log(error);
+        window.location.href = '/orders/' + id;
+      }
+    });
+  }
+});
+
+document.getElementById('finalize-order-online').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: "Taylor's Mugs",
+    description: 'Online Payment with Stripe',
+    zipCode: true,
+    amount: 2088
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>

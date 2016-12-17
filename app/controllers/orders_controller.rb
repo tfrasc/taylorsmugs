@@ -22,6 +22,28 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def pay_online
+    # Set your secret key: remember to change this to your live secret key in production
+    # See your keys here: https://dashboard.stripe.com/account/apikeys
+    Stripe.api_key = ENV['STRIPE_SECRET']
+
+    # Get the credit card details submitted by the form
+    token = params[:stripeToken]
+
+    # Create a charge: this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => 2088, # Amount in cents
+        :currency => "usd",
+        :source => token,
+        :description => "Taylor's Mugs Checkout"
+        )
+      rescue Stripe::CardError => e
+        # The card has been declined
+        redirect_to :back
+    end
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show

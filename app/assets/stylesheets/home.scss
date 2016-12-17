@@ -244,6 +244,7 @@
 }
 
 #order-box-header {
+  margin-bottom: 0px;
   padding-top: 1%;
 }
 
@@ -285,6 +286,10 @@
   &:hover {
     background-color: rgba(30, 30, 30, 0.5);
   }
+}
+
+.pay-online-price {
+  font-size: 12px;
 }
 
 .contact-container {
