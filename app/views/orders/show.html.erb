@@ -38,7 +38,7 @@
 var id = $('#id').val();
 
 var handler = StripeCheckout.configure({
-  key: 'ENV['STRIPE_KEY']',
+  key: '<%= ENV['STRIPE_KEY'] %>',
   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
   locale: 'auto',
   token: function(token) {
