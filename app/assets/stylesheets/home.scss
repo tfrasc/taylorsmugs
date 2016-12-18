@@ -288,6 +288,15 @@
   }
 }
 
+.home-btn {
+  // margin-top: 0px !important;
+  margin-top: 15px !important;
+
+  &:hover {
+    background-color: rgba(30, 30, 30, 0.5);
+  }
+}
+
 .pay-online-price {
   font-size: 12px;
 }

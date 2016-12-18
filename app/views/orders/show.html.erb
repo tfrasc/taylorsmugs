@@ -23,7 +23,6 @@
           <%= form_for @order do |f| %>
             <%= f.text_area :review, class: 'form-control order-box-input centered', placeholder: "Tell Taylor how much you love your #{@order['product']} :)"  %>
             <%= f.submit "Leave a review", class: 'btn button review-btn checkout-btn selected', style: 'margin-top:0;width:45%;' %>
-            <!-- <a class="btn button checkout-btn selected review-btn home-btn">Back to Home Page</a> -->
           <% end %>
         <% else %>
           <h2>Enjoy your <%= @order['product'] %> :)</h2>
@@ -39,7 +38,7 @@ var id = $('#id').val();
 
 var handler = StripeCheckout.configure({
   key: '<%= ENV['STRIPE_KEY'] %>',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  image: '/images/icon-small.png',
   locale: 'auto',
   token: function(token) {
     $.ajax({
