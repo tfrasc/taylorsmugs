@@ -2,15 +2,19 @@
 
 Simple, mobile-friendly Rails website for local Reno/Tahoe artist that sells mugs.
 
-TODOs:
+
+Features:
 
 * Implement online payment (Stripe)
 
-* Fix production image upload by using AWS S3 bucket
+* Production image upload using AWS S3 bucket
+
+
+TODOs:
 
 * Fix HTML5 image dropper with mug/wine/shot glass template
 
-* Implement emails to notify admin and user of order
+* Implement emails and/or sms (Twilio) to notify admin and user of order
 
 * Create admin view to track payments and deliveries
 
