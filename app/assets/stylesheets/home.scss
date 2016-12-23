@@ -320,3 +320,41 @@
     }
   }
 }
+
+.order-btn {
+  background-color: lightgreen;
+  border-radius: 5px;
+  border: none;
+  min-width: 55px;;
+
+  &:hover {
+    background-color: #68f442;
+  }
+}
+
+.show-btn {
+  background-color: #42bff4;
+
+  &:hover {
+    background-color: #0eadf1;
+  }
+}
+
+.cancel-btn {
+  background-color: #ff7c7c;
+
+  &:hover {
+    background-color: #ff6363;
+  }
+
+  a {
+    background-color: transparent;
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+    &:visited {
+      color: black;
+    }
+  }
+}

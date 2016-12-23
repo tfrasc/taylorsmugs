@@ -19,7 +19,13 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    if params[:sort_by] == 'unpaid'
+      @orders = Order.all.order(paid: :asc, id: :desc)
+    elsif params[:sort_by] == 'undelivered'
+      @orders = Order.all.order(delivered: :asc, id: :desc)
+    else
+      @orders = Order.all.order(id: :desc)
+    end
   end
 
   def pay_online
@@ -47,34 +53,6 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    # # WePay Ruby SDK - http://git.io/a_c2uQ
-    # require 'wepay'
-    #
-    # # application settings
-    # account_id = 123456789  # your app's account_id
-    # client_id = 123456789
-    # client_secret = '1a3b5c7d9'
-    # access_token = 'STAGE_8a19aff55b85a436dad5cd1386db1999437facb5914b494f4da5f206a56a5d20' # your app's access_token
-    #
-    # # set _use_stage to false for live environments
-    # wepay = WePay::Client.new(client_id, client_secret, _use_stage = true)
-    #
-    # # create the checkout
-    # response = wepay.call('/checkout/create', access_token, {
-    #   :account_id         => account_id,
-    #   :amount             => '24.95',
-    #   :short_description  => 'Services rendered by freelancer',
-    #   :type               => 'service',
-    #   :currency           => 'USD'
-    # })
-    #
-    # @checkout_id = response['checkout_id']
-    # @checkout_uri = response['checkout_uri']
-    #
-    # # display the response
-    # p response
-    # p @checkout_id
-    # p @checkout_uri
   end
 
   # GET /orders/new
@@ -134,6 +112,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :phone, :email, :details, :product, :price, :paid, :method, :review, :photo)
+      params.require(:order).permit(:name, :phone, :email, :details, :product, :price, :paid, :method, :review, :photo, :delivered, :paid)
     end
 end

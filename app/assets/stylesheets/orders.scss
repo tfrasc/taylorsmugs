@@ -152,3 +152,36 @@
 .checkout-review {
   margin-top: 50px;
 }
+
+.order-sorts {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h4 {
+    margin: 10px;
+    display: inline;
+
+    a {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+  }
+
+  .sorted-by {
+    text-decoration: underline;
+  }
+}
+
+.orders-table {
+  td, th {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: black;
+  }
+}
