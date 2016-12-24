@@ -23,6 +23,8 @@ class OrdersController < ApplicationController
       @orders = Order.all.order(paid: :asc, id: :desc)
     elsif params[:sort_by] == 'undelivered'
       @orders = Order.all.order(delivered: :asc, id: :desc)
+    elsif params[:sort_by] == 'featured'
+      @orders = Order.all.order(featured: :desc, id: :desc)
     else
       @orders = Order.all.order(id: :desc)
     end
@@ -112,6 +114,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :phone, :email, :details, :product, :price, :paid, :method, :review, :photo, :delivered, :paid)
+      params.require(:order).permit(:name, :phone, :email, :details, :product,
+      :price, :paid, :method, :review, :photo, :delivered, :paid, :featured)
     end
 end

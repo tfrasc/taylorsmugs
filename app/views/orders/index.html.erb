@@ -1,13 +1,14 @@
-<div style="width: 90%;float:none;margin:auto;">
+<div style="width:90%;float:none;margin:auto;">
 <p style="padding-top:45px" id="notice"><%= notice %></p>
 
 <h1 style="text-align:center;">Orders</h1>
 <br>
 
 <div class="order-sorts">
-  <h4 class="sort-by newest"><a href="?">Sort by Newest</a></h4>
-  <h4 class="sort-by unpaid"><a href="?sort_by=unpaid">Sort by Unpaid</a></h4>
-  <h4 class="sort-by undelivered"><a href="?sort_by=undelivered">Sort by Undelivered</a></h4>
+  <h4 class="sort-by newest"><a href="?">Newest</a></h4>
+  <h4 class="sort-by unpaid"><a href="?sort_by=unpaid">Unpaid</a></h4>
+  <h4 class="sort-by undelivered"><a href="?sort_by=undelivered">Undelivered</a></h4>
+  <h4 class="sort-by featured"><a href="?sort_by=featured">Featured</a></h4>
 </div>
 
 <table class="orders-table" style="float:none;margin:auto;">
@@ -15,15 +16,15 @@
     <tr>
       <th>Image</th>
       <th>ID</th>
+      <th>Order Date</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Email</th>
       <th>Details</th>
       <th>Product</th>
       <th>Price</th>
-      <th>Paid?</th>
-      <th>Delivered?</th>
       <th>Method</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -36,14 +37,13 @@
       <tr>
         <td><img style="border-radius:5px;" src='<%= order.photo(:thumb) %>'></td>
         <td><%= order['id'] %></td>
+        <td><%= order['created_at'].strftime('%A, %B %d') %></td>
         <td><%= order['name'] %></td>
         <td><%= order['phone'] %></td>
         <td><%= order['email'] %></td>
         <td><%= order['details'] %></td>
         <td><%= order['product'] %></td>
         <td><%= order['price'] %></td>
-        <td><%= order['paid'] %></td>
-        <td><%= order['delivered'] %></td>
         <td><%= order['method'] %></td>
         <td>
           <% if !order.paid %>
@@ -53,6 +53,13 @@
         <td>
           <% if !order.delivered %>
             <button class="deliverd order-btn" onclick="setAsDelivered(<%= order.id %>)">Set as Delivered</button>
+          <% end %>
+        </td>
+        <td>
+          <% if !order.featured %>
+            <button class="deliverd featured-btn" onclick="setAsFeatured(<%= order.id %>)">Set as Featured</button>
+          <% else %>
+            <button class="deliverd unfeatured-btn" onclick="setAsUnfeatured(<%= order.id %>)">Set as Unfeatured</button>
           <% end %>
         </td>
         <td>
@@ -95,6 +102,30 @@
     });
   }
 
+  var setAsFeatured = function(id) {
+    $.ajax({
+      type: "PATCH",
+      url: '/orders/' + id,
+      data: {order: {featured: true} },
+      dataType: "text",
+      success: function(resultData){
+        window.location.href = '/orders';
+      }
+    });
+  }
+
+  var setAsUnfeatured = function(id) {
+    $.ajax({
+      type: "PATCH",
+      url: '/orders/' + id,
+      data: {order: {featured: false} },
+      dataType: "text",
+      success: function(resultData){
+        window.location.href = '/orders';
+      }
+    });
+  }
+
   var showOrder = function(id) {
     window.location.href = '/orders/' + id;
   }
@@ -106,6 +137,9 @@
     }
     else if(window.location.href.indexOf('undelivered') >= 0) {
       $('.undelivered').addClass('sorted-by');
+    }
+    else if(window.location.href.indexOf('featured') >= 0) {
+      $('.featured').addClass('sorted-by');
     }
     else {
       $('.newest').addClass('sorted-by');

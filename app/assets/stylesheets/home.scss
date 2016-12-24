@@ -333,10 +333,38 @@
 }
 
 .show-btn {
+  border-radius: 5px;
+  border: none;
+  min-width: 55px;;
+
   background-color: #42bff4;
 
   &:hover {
     background-color: #0eadf1;
+  }
+}
+
+.featured-btn {
+  border-radius: 5px;
+  border: none;
+  min-width: 55px;;
+
+  background-color: #0ee0ef;
+
+  &:hover {
+    background-color: #12c4d1;
+  }
+}
+
+.unfeatured-btn {
+  border-radius: 5px;
+  border: none;
+  min-width: 55px;;
+
+  background-color: #f4b642;
+
+  &:hover {
+    background-color: #efa00e;
   }
 }
 
