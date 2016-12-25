@@ -19,11 +19,10 @@
       <th>Name</th>
       <th>Phone</th>
       <th>Email</th>
+      <th>Product</th>
+      <th>Method</th>
       <th>Details</th>
       <th>Review</th>
-      <th>Product</th>
-      <th>Price</th>
-      <th>Method</th>
       <th></th>
       <th></th>
       <th></th>
@@ -40,11 +39,10 @@
         <td><%= order['name'] %></td>
         <td><%= order['phone'] %></td>
         <td><%= order['email'] %></td>
+        <td><%= order['product'] %></td>
+        <td><%= order['method'] %></td>
         <td><%= order['details'] %></td>
         <td><%= order['review'] %></td>
-        <td><%= order['product'] %></td>
-        <td><%= order['price'] %></td>
-        <td><%= order['method'] %></td>
         <td>
           <% if !order.paid %>
             <button class="paid order-btn" onclick="setAsPaid(<%= order.id %>)">Set as Paid</button>
