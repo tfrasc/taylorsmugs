@@ -9,7 +9,7 @@ Features:
 
 * Production image upload using AWS S3 bucket
 
-* Admin view to track payments and deliveries
+* Admin view (password protected) to track payments and deliveries
 
 
 TODOs:
