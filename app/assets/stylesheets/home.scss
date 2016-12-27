@@ -386,3 +386,16 @@
     }
   }
 }
+
+.login-container {
+  float: none;
+  margin: auto;
+  text-align: center;
+  width: 30%;
+  height: 55%;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  background-color: rgba(225, 225, 225, 0.75);
+  border-radius: 25px;
+  border: solid 1px #ddd;
+}

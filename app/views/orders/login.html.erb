@@ -1,0 +1,35 @@
+<div class="container" style="float:none;margin:auto;text-align:center;">
+  <div class="login-container">
+    <h2>Admin Login</h2>
+
+    <label>Password</label>
+    <input type="text" id="password"></input><br>
+    <p id="incorrect-password" style="color:red" hidden>Incorrect password</p>
+    <button onclick="login()" class="btn button" style="margin-top:10px;margin-bottom:20px;">Login</button>
+  </div>
+</div>
+
+<script>
+
+var login = function() {
+  password = $('#password').val();
+
+  $.ajax({
+    type: "POST",
+    url: '/admin_login',
+    data: {password: password},
+    dataType: "text",
+    success: function(response){
+      if(response === 'success')
+      {
+        $('#incorrect-password').hide();
+        window.location.href = '/admin';
+      }
+      else {
+        $('#incorrect-password').show();
+        console.log(response);
+      }
+    }
+  });
+}
+</script>

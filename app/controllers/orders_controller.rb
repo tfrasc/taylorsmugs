@@ -16,9 +16,13 @@ class OrdersController < ApplicationController
     end
   end
 
-  # GET /orders
-  # GET /orders.json
+  # GET /admin
+  # GET /admin.json
   def index
+    if session[:admin] != true
+      redirect_to '/login' and return
+    end
+
     if params[:sort_by] == 'unpaid'
       @orders = Order.all.order(paid: :asc, id: :desc)
     elsif params[:sort_by] == 'undelivered'
@@ -27,6 +31,19 @@ class OrdersController < ApplicationController
       @orders = Order.all.order(featured: :desc, id: :desc)
     else
       @orders = Order.all.order(id: :desc)
+    end
+  end
+
+  def login
+
+  end
+
+  def admin_login
+    if params[:password] == ENV['ADMIN_PASSWORD']
+      session[:admin] = true
+      respond_to do |format|
+        format.json { render json: 'success'}
+      end
     end
   end
 
