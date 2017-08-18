@@ -68,7 +68,7 @@ $(document).ready(function() {
       if(featuredMugId == numFeaturedMugs) {
         featuredMugId = 0;
       }
-    }, 2500);
+    }, 5000);
   }
 
   featuredMugFlipper();
