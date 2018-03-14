@@ -30,7 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Stripe API to make online payments
 gem 'stripe'
 
-gem 'paperclip'
+gem 'paperclip', '~> 5.2.0'
+
+gem 'nokogiri', '~> 1.8.1'
 
 gem 'pg'
 
